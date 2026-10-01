@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Best Panel</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="toast" class="toast"></div>
+
+  <section id="authView" class="auth-shell">
+    <div class="auth-card">
+      <div class="brand"><span class="brand-mark">B</span><span>Best Panel</span></div>
+      <div class="auth-tabs">
+        <button class="tab active" data-mode="login">Giriş</button>
+        <button class="tab" data-mode="register">Kayıt</button>
+      </div>
+      <h1 id="authTitle">Hesabına giriş yap</h1>
+      <p id="authSub">Paneline devam etmek için bilgilerini gir.</p>
+      <form id="authForm">
+        <label>E-posta<input id="email" type="email" autocomplete="email" required placeholder="ornek@mail.com"></label>
+        <label>Şifre<input id="password" type="password" autocomplete="current-password" minlength="8" required placeholder="En az 8 karakter"></label>
+        <button class="primary wide" type="submit" id="authSubmit">Giriş Yap</button>
+      </form>
+      <p class="hint">Hesaplar birbirinden bağımsızdır. Her kullanıcı kendi panelini görür.</p>
+    </div>
+  </section>
+
+  <section id="appView" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">B</span><span>Best Panel</span></div>
+      <nav>
+        <button class="nav active" data-page="home">⌂ <span>Genel Bakış</span></button>
+        <button class="nav" data-page="account">◉ <span>Hesabım</span></button>
+      </nav>
+      <button id="logout" class="logout">Çıkış Yap</button>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">BEST PANEL</div>
+          <h2 id="welcome">Hoş geldin 👋</h2>
+        </div>
+        <div class="user-chip" id="userChip">—</div>
+      </header>
+
+      <div id="homePage" class="page">
+        <div class="hero">
+          <div>
+            <span class="pill">Kişisel panel</span>
+            <h1>Her şey tek yerde.</h1>
+            <p>Hesabını, durumunu ve panel bilgilerini sade bir arayüzden yönet.</p>
+          </div>
+          <div class="hero-badge">BEST<br><b>PANEL</b></div>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><span>Hesap durumu</span><strong id="accountStatus">AKTİF</strong><small>Giriş yapan hesap</small></div>
+          <div class="stat"><span>Üyelik</span><strong id="planValue">Standart</strong><small>Hesabına bağlı</small></div>
+          <div class="stat"><span>Kayıt tarihi</span><strong id="createdValue">—</strong><small>Hesap oluşturulma</small></div>
+        </div>
+
+        <div class="grid">
+          <section class="panel">
+            <div class="panel-head"><div><span class="section-kicker">HESABIN</span><h3>Profil bilgileri</h3></div></div>
+            <div class="rows">
+              <div><span>E-posta</span><b id="emailValue">—</b></div>
+              <div><span>Kullanıcı ID</span><b id="idValue">—</b></div>
+              <div><span>Durum</span><b class="ok">● Aktif</b></div>
+            </div>
+          </section>
+          <section class="panel">
+            <div class="panel-head"><div><span class="section-kicker">PANEL</span><h3>Hızlı işlemler</h3></div></div>
+            <div class="actions">
+              <button class="action" data-page="account">Hesap bilgilerim <span>→</span></button>
+              <button class="action" id="refreshBtn">Paneli yenile <span>↻</span></button>
+              <button class="action danger" id="logout2">Oturumu kapat <span>↗</span></button>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div id="accountPage" class="page hidden">
+        <section class="panel account-panel">
+          <span class="section-kicker">HESABIM</span>
+          <h2>Hesap bilgileri</h2>
+          <p class="muted">Bu bilgiler yalnızca giriş yapan hesabın verilerinden yüklenir.</p>
+          <div class="account-box">
+            <div><span>E-posta</span><b id="accountEmail">—</b></div>
+            <div><span>Kullanıcı ID</span><b id="accountId">—</b></div>
+            <div><span>Kayıt tarihi</span><b id="accountCreated">—</b></div>
+            <div><span>Hesap durumu</span><b class="ok">● Aktif</b></div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </section>
+  <script src="/script.js"></script>
+</body>
+</html>
